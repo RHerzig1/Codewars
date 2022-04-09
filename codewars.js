@@ -1,10 +1,36 @@
-// It's the academic year's end, fateful moment of your school report. The averages must be calculated. All the students come to you and entreat you to calculate their average for them. Easy ! You just need to write a script.
-// Return the average of the given array rounded down to its nearest integer.
-// The array will never be empty.
+// Given an array of numbers, check if any of the numbers are the character codes for lower case vowels (a, e, i, o, u).
+// If they are, change the array value to a string of that vowel.
+// Return the resulting array.
 
-const getAverage = marks => Math.floor(marks.reduce((a,b) => a + b, 0)/marks.length)
-
-// P: Array of numbers.
-// R: Return a number, the average of each number of the array, rounded down to the nearest integer.
-// E: [1,2,3,4,5] => 3
-// P: Take array, add each number, divide by length, round to floor, return integer.
+function isVow(a){
+    for (let i = 0; i < a.length; i++){
+        if (a[i] === 097){
+            a[i] = 'a'
+        }
+        else if (a[i] === 101){
+            a[i] = 'e'
+        }
+        else if (a[i] === 105){
+            a[i] = 'i'
+        }
+        else if (a[i] === 111){
+            a[i] = 'o'
+        }
+        else if (a[i] === 117){
+            a[i] = 'u'
+        }
+    }
+    
+    return a
+}
+    
+    // P: Array of numbers
+    // R: Return the array with numbers changed to corrisponding vowels
+    // E: [101,121] => ["e",121]
+    // P: Take an array, find the numbers that correspond to vowels, replace the numbers with the respective vowel string, return the updated array.
+    
+    // a	097
+    // e	101
+    // i	105
+    // o	111
+    // u	117
