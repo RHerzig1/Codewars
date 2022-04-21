@@ -15,4 +15,4 @@ findMultiples(2, 6)
 // P: Two integers, a lower and upper limit
 // R: Return an array containing all multiples of both numbers, including the upper limit itself if applicable.
 // E: (2, 6) -> [2, 4, 6]
-// P: Take the aray, use conditionals to isolate the string for magNumber[0], then calculate (magNumber[1] * 3 / # of bullets in the magazine, round to ceiling, and return.
+// P: Take the integers, create a for loop with the limit parameter as the limit, and test i % integer. If it === 0, push the value into an array. When the loop is finished, return the array.
