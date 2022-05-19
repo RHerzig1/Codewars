@@ -8,7 +8,7 @@ function orderFood(list) {
       foodCount[key.meal] += 1
     }
     else {
-      foodCount.push(key.meal)
+      foodCount[key.meal] = 1
     }
   }
   return foodCount
