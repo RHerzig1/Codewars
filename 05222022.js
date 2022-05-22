@@ -20,7 +20,6 @@ return sum
 // Sort it in order of greatest to smallest integer.
 // Using a for loop, iterate through the array.
 // Calculate the sum with array[i] - array[i + 1].
-// Check that if array[i + 1] is truthy before applying the calculation.
 // Add the calculation to sum.
 // Return sum.
 
