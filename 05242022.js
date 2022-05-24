@@ -12,6 +12,11 @@ function getFirstPython(list) {
   return 'There will be no Python developers'
 }
 
+function getFirstPython(list) {
+  const dev = list.find(elem => elem.language === 'Python')
+  return dev ? `${dev.firstName}, ${dev.country}` : 'There will be no Python developers'
+}
+
 // An array of objects.
 // Return `${firstName}, ${country}` || 'There will be no Python developers'
 // Iterate through the array of object.
