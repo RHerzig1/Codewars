@@ -1,4 +1,4 @@
-# Codewars
+# Coding Challenges
 
 https://www.codewars.com
 
@@ -13,7 +13,7 @@ This repository contains solutions to all the Kata that I attempt. Each file inc
 
 I solve at least 5 Codewars a week.
 
-## Optimizations
+## Optimizations:
 
 If you give a kata to 100 engineers, you'll get 100 different solutions. This makes Codewars an excellent resource to discover new ways of solving problems.
 
