@@ -19,8 +19,6 @@ function primeFactors(n){
      else {
        valuesSorted[elem] = 1
      }
-     
-     
    }
  })
   
