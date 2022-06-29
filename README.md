@@ -34,7 +34,8 @@ The kata commonly contain computer logic and mathematical themes.
 
 ## How It's Made:
 
-<img src="https://www.codewars.com/users/Herzigr/badges/large"/>
+<img align='center' src="https://www.codewars.com/users/Herzigr/badges/large"/>
+
 https://www.codewars.com/users/Herzigr
 
 This repository contains solutions to all the Kata that I attempt. Each file includes the challenge, solution, and my pseudocode.
