@@ -4,12 +4,8 @@
 function digPow(n, p){
   let calculation = Array.from(n.toString()).map(Number)
   
-  for (let i = 0; i < calculation.length; i++) {
-    calculation[i] = Math.pow(calculation[i], p)
-    p++
-  }
+  calculation = calculation.map(elem => Math.pow(elem, p++)).reduce((a, b) => a + b) / n
   
-  calculation = calculation.reduce((a, b) => a + b) / n
   return Math.round(calculation) == calculation ? calculation : -1
 }
 
