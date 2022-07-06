@@ -1,4 +1,4 @@
-// Find irregular integer from extremely large array
+// Find irregular integer in extremely large array
 // Provided an array of integers, return the element of the integer that does not match the others. The arrays may be very large, so pay attention to performance.
 
 function findUniq(arr) {
