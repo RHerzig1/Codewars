@@ -1,4 +1,4 @@
-// Tally characters in string
+// Count of characters in string
 // In a string of characters, count the total number of times each character appears.
 
 function count (string) {  
