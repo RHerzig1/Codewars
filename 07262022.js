@@ -1,4 +1,4 @@
-// Create a multiplication table
+// Create a multiplication table from arrays
 // For a provided size, create a multiplication table.
 
 multiplicationTable = function(size) {
