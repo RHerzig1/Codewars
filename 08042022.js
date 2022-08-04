@@ -11,7 +11,7 @@ function cleanString(s) {
     else if (!deleteCount) result.unshift(array[i])
     else deleteCount--
   }
-  return result
+  return result.join()
 }
 
 // The parameter is a string of letters and the # character.
