@@ -19,10 +19,9 @@ function presses(phrase) {
   let count = 0
 
   for (let i = 0; i < phrase.length; i++) {
-    const character = phrase[i]
       for (key in keyboard) {
-        if (keyboard[key].includes(character)) {
-          count += keyboard[key].indexOf(character) + 1
+        if (keyboard[key].includes(phrase[i])) {
+          count += keyboard[key].indexOf(phrase[i]) + 1
           break
         }
       }
