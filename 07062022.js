@@ -14,4 +14,4 @@ function findUniq(arr) {
 // Return the element that does not match the others
 // [4, 4, 2, 4, 4, 4, 4] -> 2
 // Sort the array.
-// If arr[0] == arr[1], return arr.at(-1). Else return arr[0]
+// If arr[0] == arr[1], return arr.at(-1). Else return arr[0].
