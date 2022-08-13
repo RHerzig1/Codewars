@@ -1,12 +1,18 @@
-// Abbreviate words by replacing letters with letter count
-// In the provided string, replace internal letters of the word(s) with a count of the removed letters.
+// Create a secret holding factory function
+// Write a function that accepts any value as a secret and returns an object containing a getSecret method (returns the secret) and setSecret method (assigns the secret value).
 
-function abbreviate(string) {
-  return string.replace(/\w{4,}/g, word => {
-    return word[0] + (word.length - 2) + word.slice(-1)
-  })
+function createSecretHolder(secret) {
+  return {
+    getSecret: function() {
+      return secret
+    },
+    setSecret: function(value) {
+      secret = value
+    }
+  }
 }
 
-// The parameter is a string containing at least one word.
-// Return a string, but convert words longer than 3 letters into "first letter" "count of interior letters" "final letter" format. Preserve capitalization and punctuation.
-// "JavaScript is really fun!" -> "J8t is r4y fun!"
+// The parameter is an integer.
+// Return the two methods.
+// To write a factory function, write return {} as the statment body.
+// Inside the curly braces, write the two methods as directed.
