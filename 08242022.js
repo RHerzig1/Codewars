@@ -4,7 +4,7 @@
 function getTheVowels(word) {
   const vowels = ['a', 'e', 'i', 'o', 'u']
   let count = 0
-  for (let letter of [...word]) {
+  for (let letter in [...word]) {
     if (letter === vowels[count % vowels.length]) {
       count++
     }
