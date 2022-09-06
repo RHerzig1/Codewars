@@ -1,4 +1,4 @@
-// Assess blood pressure to diagnose hypertension in patients.
+// Assess blood pressure to diagnose hypertension in patients
 // Count the number of slices of bread in a sandwich to return the name of the sandwich. In another function, take the name of the sandwich and return the number of slices.
 
 function hypertensive(patients) {
