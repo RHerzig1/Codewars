@@ -1,4 +1,4 @@
-// Is sum of squares from array larger than sum of cubes of another
+// Is sum of squares from array larger than sum of cubes from another
 
 function arrayMadness(a, b) {
   let squared = a.reduce((a, b) => a + b ** 2, 0)
