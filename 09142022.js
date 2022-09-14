@@ -1,13 +1,15 @@
-// Is sum of squares from array larger than sum of cubes from another
+// Create cascading array subsets of n length
 
-function arrayMadness(a, b) {
-  let squared = a.reduce((a, b) => a + b ** 2, 0)
-  let cubed = b.reduce((a, b) => a + b ** 3, 0)
-  return squared > cubed
+function eachCons(array, n) {
+	const result = []
+  for (let i = 0; i <= array.length - n; i++) {
+    result.push(array.slice(i, n + i))
+  }
+  return result
 }
 
-// The parameters are both arrays of numbers with a length of at least 1 element.
-// Return true or false.
-// Declare squared and cubed variables.
-// Set the values to the arrays squared or cubed using the reduce method.
-// Return a boolean stating squared is larger than cubed.
+// The parameters are an array of integers and a number.
+// Return the array, but split the elements into subsets. The length is defined by the second parameter.
+// Declare a result variable and set it equal to an empty array.
+// In a for loop, push the subsets into result.
+// Return result.
