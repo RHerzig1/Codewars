@@ -1,4 +1,4 @@
-// Remove first and last characters of string.
+// Remove first and last characters of string
 
 function array(arr) {
   return arr.split(",").slice(1, -1).join(" ") || null;
