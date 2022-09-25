@@ -1,4 +1,4 @@
-// Create an array using min element, max element, and difference between age the two.
+// Create an array using min element, max element, and difference between the two.
 
 function differenceInAges(ages) {
   ages = ages.sort((a, b) => a - b)
