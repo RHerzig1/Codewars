@@ -1,4 +1,4 @@
-// Multiply word from array
+// Repeat word from array
 
 function modifyMultiply (str,loc,num) {
   str = str.split(' ')
