@@ -4,14 +4,14 @@ function reduceString(message) {
   message = message.split(',')
   reducedString = []
   for (let i = 0; i < message.length; i++) {
-    if (message[i] != message[i].trim()) { }
-    else if (message[i].toLowerCase().includes("dog") || message[i].toLowerCase().includes("bark") || message[i].toLowerCase().includes("bone")) { }
-    else if (message[i].length % 5 === 0) { }
-    else if ((message[i].charCodeAt(0) + message[i].charCodeAt(message[i].length - 1)) % 2 === 0) { }
-    else if (message[Math.floor((message.length + 1) / 2)] === 'e') { }
-    else if (message[i].split('').filter(elem => elem >= 'a' && elem <= 'z').length % 2 === 1) { }
-    else if (message[i].split('').filter(elem => elem >= 'A' && elem <= 'Z').length != 2) { }
-    else if (message[i].includes('S')) { }
+    if (message[i] != message[i].trim()) { console.log(1, message[i]) }
+    else if (message[i].toLowerCase().includes("dog") || message[i].toLowerCase().includes("bark") || message[i].toLowerCase().includes("bone")) { console.log(2, message[i]) }
+    else if (message[i].length % 5 === 0) { console.log(3, message[i]) }
+    else if ((message[i].charCodeAt(0) + message[i].charCodeAt(message[i].length - 1)) % 2 === 0) { console.log(4, message[i]) }
+    else if (message[Math.floor((message.length + 1) / 2)] === 'e') { console.log(5, message[i]) }
+    else if (message[i].split('').filter(elem => elem >= 'a' && elem <= 'z').length % 2 === 1) { console.log(6, message[i]) }
+    else if (message[i].split('').filter(elem => elem >= 'A' && elem <= 'Z').length != 2) { console.log(7, message[i]) }
+    else if (message[i].includes('S')) { console.log(8, message[i])}
     else reducedString.push(message[i])
   }
 
