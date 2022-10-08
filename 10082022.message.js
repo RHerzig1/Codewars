@@ -62,6 +62,22 @@ function removeCharacters(message, integer = 3) {
     return result.join('')
 }
 
+function reverseAlphabet(message) {
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+    const result = []
+    message = [...message]
+    
+    for (let i = 0; i < message.length; i++) {
+      let character = message[i].toLowerCase()
+      if (character >= 'a' && character <= 'z') {
+        character = alphabet.at(alphabet.indexOf(character) * -1 - 1)
+        character = message[i] === message[i].toLowerCase() ? character.toUpperCase() : character
+      }
+      result.push(character)
+    }
+    return result.join('')
+  }
+
 
 let key = "e!!Igv)t5lltBcvbdeDH3dVw!OOtI#Aa.ZMDu7WYpP^VVjDc4I50iv#ylhgmQfs"
 key = replaceCharacters(key)
@@ -70,5 +86,6 @@ key = replaceCharactersWithSpaces(key)
 key = reverseString(key)
 // key = reduceString(key)
 key = removeCharacters(key)
+key = reverseAlphabet(key)
 
 console.log(key)
