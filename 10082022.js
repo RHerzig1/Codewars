@@ -16,9 +16,7 @@ function reverseAlphabet(message) {
   return result.join('')
 }
 
-console.log(
 reverseAlphabet('vCZNKOV: 0 MFNYVI LI KFMXGFZGRLM XSZMTVH')
-)
 
 // The parameter is a non-empty string containing letters, spaces, and numbers, and an integer.
 // Return the string removing reversing the alphabet count, so instead of starting from the beginning, start from the end. In addition, set to opposite casing.
