@@ -1,15 +1,19 @@
 // Return the sum of the two unique numbers of an array
 
+// function repeats(arr) {
+//   const results = []
+//   arr = arr.sort()
+//   for (let i = 0; i < arr.length; i += 2) {
+//     if (arr[i] !== arr[i + 1]) {
+//       results.push(arr[i])
+//       i -= 1
+//     }
+//   }
+//   return results.reduce((a, c) => a + c, 0)
+// }
+
 function repeats(arr) {
-  const results = []
-  arr = arr.sort()
-  for (let i = 0; i < arr.length; i += 2) {
-    if (arr[i] !== arr[i + 1]) {
-      results.push(arr[i])
-      i -= 1
-    }
-  }
-  return results.reduce((a, c) => a + c, 0)
+  return arr.filter(elem => arr.indexOf(elem) === arr.lastIndexOf(elem)).reduce((a, c) => a + c, 0)
 }
 
 console.log(repeats([4, 5, 7, 5, 4, 8]), 15)
