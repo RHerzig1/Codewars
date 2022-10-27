@@ -1,15 +1,7 @@
 // Transform string based on whether each character is unique
 
 function recreateString(string) {
-  const result = []
-  string = string.toLowerCase().split('')
-  string.forEach(character => {
-    if (string.indexOf(character) === string.lastIndexOf(character)) {
-      result.push('(')
-    }
-    else result.push(')')
-  })
-  return result.join('')
+  return string.toLowerCase().split('').map((elem, index, array) => array.indexOf(elem) === array.lastIndexOf(elem) ? '(' : ')').join('')
 }
 
 console.log(recreateString("din")) // "((("
