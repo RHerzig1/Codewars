@@ -1,9 +1,15 @@
 // Return integer missing from array
 
-function findDeletedNumber(arr, mixedArr) {
-  return mixedArr.sort((a, b) => a - b).find((elem, index) => elem !== index + 1) - 1 || 0
-}
+// function findDeletedNumber(arr, mixedArr) {
+//   return mixedArr.sort((a, b) => a - b).find((elem, index) => elem !== index + 1) - 1 || 0
+// }
 
+function findDeletedNumber(arr, mixedArr) {
+  if (arr.length === mixedArr.length) return 0
+  let arrSum = arr.reduce((a, c) => a + c, 0)
+  let mixedArrSum = mixedArr.reduce((a, c) => a + c, 0)
+  return arrSum - mixedArrSum
+}
 
 console.log(findDeletedNumber([1,2,3,4,5], [3,4,1,5])), // 2, 'Deletion'
 console.log(findDeletedNumber([1,2,3,4,5,6,7,8,9], [1,9,7,4,6,2,3,8])), // 5, 'Deletion'
