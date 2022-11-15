@@ -1,10 +1,10 @@
 // Sort even and odd numbers in array differently
 
 function sortArray(arr) {
-  const arrOdd = arr.filter(elem => Math.abs(elem) % 2 === 1).sort((a, b) => a - b)
+  const arrOdd = arr.filter(elem => Math.abs(elem) % 2 === 1).sort((a, b) => b - a)
   for (let i = 0; i < arr.length; i++) {
     if (Math.abs(arr[i]) % 2 === 1) {
-      arr[i] = arrOdd.shift()
+      arr[i] = arrOdd.pop()
     }
   }
   return arr
