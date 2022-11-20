@@ -1,5 +1,7 @@
-// Calculate the sum of interior angles in polygon
+// Return Boolean indicating anagram parameters
 
-function angle(n) {
-  return (n - 2) * 180;
+function isAnagram(test, original) {
+  test = test.toLowerCase().split('').sort().join('')
+  original = original.toLowerCase().split('').sort().join('')
+  return test === original
 }
