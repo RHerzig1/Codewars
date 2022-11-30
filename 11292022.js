@@ -1,8 +1,8 @@
 // Find next largest number using all the same digits
 
-function nextBigger(n){
+function nextBigger(n) {
   let arr = String(n).split('').map(Number)
- 
+
   let indexOfLesserDigit = -1
   for (let i = arr.length - 1; i >= 0; i--) {
     if (arr[i] > arr[i - 1]) {
@@ -10,13 +10,13 @@ function nextBigger(n){
       break
     }
   }
- 
+
   if (arr.length === 1 || indexOfLesserDigit === -1) return -1
- 
+
   const subSet = arr.slice(indexOfLesserDigit + 1)
   const nextLargerDigitInSubSet = Math.min(...subSet.filter(elem => elem > arr[indexOfLesserDigit]))
   const indexOfNextLargerDigitInSubSet = arr.findIndex((elem, index) => index > indexOfLesserDigit && elem === nextLargerDigitInSubSet)
- 
+
   const temp = arr[indexOfNextLargerDigitInSubSet]
   arr[indexOfNextLargerDigitInSubSet] = arr[indexOfLesserDigit]
   arr[indexOfLesserDigit] = temp
