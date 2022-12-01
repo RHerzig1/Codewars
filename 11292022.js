@@ -30,7 +30,7 @@ console.log(nextBigger(33561)) // 33615
 console.log(nextBigger(98375)) // 98537
 
 // A positive integer.
-// Rearrange the digits to return the next closest bigger number. If no bigger number can be created, return -1
+// Rearrange the digits to return the next closest bigger number. If no bigger number can be created, return -1.
 
 // Split the number into an array of single char elements.
 // Iterate backwards.
