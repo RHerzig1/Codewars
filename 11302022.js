@@ -10,7 +10,7 @@ function absentVowel(x) {
 }
 
 // A string of words. Always containing all but 1 vowel. Ignore capitalization. Always valid entry.
-// Return the index of the missing vowel. Use the reference: 'aeiou'.
+// Return the index of the missing vowel. Use the reference: 'aeiou'
 
 // Iterate through the array of vowels.
 // For each vowel, iterate through the string. If the vowel is not found, return the index of that vowel.
