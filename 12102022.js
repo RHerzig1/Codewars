@@ -35,5 +35,6 @@ console.log(searchInsert([1, 3], 2), 1)
 // 'start:', 0, 'end:', 1, 'guessIndex:', 0, 'target:', 1
 // 'start:', 0, 'end:', 1, 'guessIndex:', 0, 'target:', 1
 
-// A sorted array of integers, length btwn 1 - 10**4. All values are unique and in ascending order. And a target integer, whole number, positive or negative.
+// A sorted array of integers, length btwn 1 - 10**4. All values are unique and in ascending order.
+// A target integer, whole number, positive or negative.
 // Return the index of the target, or the index where it should be. Use O(log n) time complexity.
