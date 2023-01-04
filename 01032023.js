@@ -1,4 +1,4 @@
-// Use recursion to calculate the Fibonacci sequence starting a n
+// Use recursion to calculate the Fibonacci sequence starting at n
 
 // function calculateFibonacci(n){
 //   const arr = [0, 1]
