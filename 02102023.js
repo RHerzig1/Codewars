@@ -1,4 +1,4 @@
-// Write a recursive function that checks whether two binary trees are equal
+// Write a recursive function that returns the maximum depth of a binary tree
 
 // function TreeNode(val, left, right) {
 //   this.val = (val === undefined ? 0 : val)
