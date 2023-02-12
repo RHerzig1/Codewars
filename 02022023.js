@@ -1,11 +1,12 @@
 // Return sum of multiples of 3 and 5 between 0 and number using constant time complexity
 
-function solution(number) {
+function solution(number){
+  if (number < 0) return 0
   number = number - 1
-  const multiplesThree = Math.floor(number / 3)
-  const sum = multiplesThree * (multiplesThree + 1) / 2
-  const ans = sum * 3
-  return ans
+  const three = Math.floor(number / 3) * (Math.floor(number / 3) + 1) / 2 * 3
+  const five = Math.floor(number / 5) * (Math.floor(number / 5) + 1) / 2 * 5
+  const fifteen = Math.floor(number / 15) * (Math.floor(number / 15) + 1) / 2 * 15
+  return three + five - fifteen
 }
 
 console.log(solution(10), 23)
