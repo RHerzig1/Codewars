@@ -103,8 +103,3 @@ console.log(list.deleteTail())
 
 // Final linked list:
 console.log(list)
-
-// A queue is a linear data structure that is first in, first out.
-// The storage is an object, because removing object properties is faster than the array.shift() method.
-// The tail variable will always select the last property entered. Used when enqueuing.
-// The head variable will always select the first property entered. Use when dequeuing.
