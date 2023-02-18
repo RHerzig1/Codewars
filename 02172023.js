@@ -1,4 +1,4 @@
-// Create a singly linked list class in JavaScript with append, prepend, delete,and search methods.
+// Create a linked list class in JavaScript with append, prepend, delete,and search methods.
 
 class LinkedList {
   constructor() {
