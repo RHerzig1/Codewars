@@ -25,5 +25,4 @@ function reverseList(head) {
 // A linked list.
 // Return a reversed copy of the linked list.
 
-// Reverse the nodes by reassigning the pointer.
-// 
+// Reverse the nodes by reassigning the pointer
