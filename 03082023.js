@@ -1,4 +1,4 @@
-// Write an algorithm that converts a string into camelCase
+// Write an algorithm that converts a string into camelCase.
 
 function toCamelCase(str){
   let result = ''
