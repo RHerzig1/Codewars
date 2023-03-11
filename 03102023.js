@@ -11,9 +11,9 @@ function encrypt(text, rule) {
   return result.join("");
 }
 
-console.log(validClosures("(){}[]"), true);
-console.log(validClosures("([{}])"), true);
-console.log(validClosures(")(}{]["), false);
+console.log(encrypt("", 1), "");
+console.log(encrypt("a", 1), "b");
+console.log(encrypt("please encrypt me", 2), "rngcug\"gpet{rv\"og");
 
 // A string of valid characters. Uppercase, lowercase, numbers, and punctuation. String may be empty.
 // Encrypt the string by increasing the char code using the rule and return the encrypted string.
