@@ -25,8 +25,10 @@ function toWeirdCase(string){
 console.log(toWeirdCase("String"), "StRiNg")
 console.log(toWeirdCase("Weird string case"), "WeIrD StRiNg CaSe")
 
-// Two arrays containing strings.
-// Return sorted array1 containing only strings that are included in arr2. If no strings are included, return an empty array.
+// A string of letters and spaces. May be uppercase or lowercase.
+// Return the string with alternate casing. Each word starts with uppercase.
 
-// Filter arr1 to get elements that are only present in arr2.
-// Sort lexigraphically and return.
+// Declare an empty results variable.
+// Declare a count variable equal to 0.
+// For each letter of the string, push uppercase or lowercase into the array. If it's a space, insert a space.
+// Join and return the result array.
