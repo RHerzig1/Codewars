@@ -1,4 +1,4 @@
-// Write a recursive function that inverts the nodes of a binary tree.
+// Write a recursive function that returns the inorder traversal of a binary tree.
 
 // function TreeNode(val, left, right) {
 //   this.val = (val === undefined ? 0 : val)
@@ -7,15 +7,19 @@
 // }
 
 function inorderTraversal(root) {
-  if(!root) return [];
-  return [...inorderTraversal(root.left), root.val, ...inorderTraversal(root.right)];
-};
+  if (!root) return [];
+  return [
+    ...inorderTraversal(root.left),
+    root.val,
+    ...inorderTraversal(root.right),
+  ];
+}
 
 // A binary tree.
-// Return the inverted binary tree.
+// Return an array containing the inorder values, or left to right values.
 
 // Conditional cases:
-// If there is no node, return null
+// If there is no node, return an array.
 
 // Recursive case:
-// Reassign root.left and root.left to the inverted results of invertTree.
+// Return the values as part of the array.
