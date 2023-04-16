@@ -1,3 +1,5 @@
+// Write a function that converts an RGB value into a Hex value.
+
 function convertRgbToHex(r, g, b) {
   const rgb = [r, g, b].map((dec) => {
     if (dec > 255) {
@@ -20,8 +22,6 @@ function convertRgbToHex(r, g, b) {
   return hex.join("");
 }
 
-// Write a function that converts an RGB value into a Hex value.
-
 console.log(convertRgbToHex(255, 255, 255), "FFFFFF");
 console.log(convertRgbToHex(255, 255, 300), "FFFFFF");
 console.log(convertRgbToHex(0, 0, 0), "000000");
@@ -31,4 +31,4 @@ console.log(convertRgbToHex(148, 0, 211), "9400D3");
 // Return a string representing the same color as a hexadecimal.
 
 // Put parameters in an array. Loop through and fix invalid values.
-// Convert the first value by 16 and convert the whole number to hex. Multiply the decimal by 16 and convert to hex as well.
+// Convert each value to hex and return a string.
