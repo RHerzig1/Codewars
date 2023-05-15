@@ -1,18 +1,18 @@
 // Write a function that counts the number of times an integer appears within elements of an array.
 
 function countDigit(num, digit) {
-  const numArr = [...Array(num + 1).keys()].map(elem => Math.pow(elem, 2))
-  let count = 0
-  
+  const numArr = [...Array(num + 1).keys()].map((elem) => Math.pow(elem, 2));
+  let count = 0;
+
   for (const elem of numArr) {
     for (const char of String(elem)) {
       if (char === String(digit)) {
-        count++
+        count++;
       }
     }
   }
-  
-  return count
+
+  return count;
 }
 
 console.log(countDigit(5750, 0), 4700);
