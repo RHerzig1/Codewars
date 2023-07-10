@@ -1,4 +1,4 @@
-// Write a function that calculates the
+// Write a function that calculates a solution to the "twice linear" challenge, using two pointers.
 
 function dblLinear(num) {
   const calcX = (u) => 2 * u + 1;
