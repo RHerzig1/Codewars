@@ -2,9 +2,9 @@
 
 function findDigit(num, nth) {
   if (nth <= 0) {
-    return -1
+    return -1;
   }
-  
+
   const arr = Array.from(String(num)).map(Number).reverse();
   return arr[nth - 1] || 0;
 }
