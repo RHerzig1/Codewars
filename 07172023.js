@@ -1,31 +1,31 @@
-// Write a function that determines whether the nested structure of two arrays are identical.
+// Write a function that converts camelCase into kebab-case.
 
-Array.prototype.sameStructureAs = function (other, result = true) {
-  if (result === false) {
-    return false;
-  }
+function kebabize(str) {
+  const arr = [];
 
-  if (other.every((elem) => Array.isArray(elem) === false)) {
-    return other.length === this.length;
-  }
-
-  for (let i = 0; i < elem.length; i++) {
-    if (Array.isArray(other[i]) === true && Array.isArray(this[i]) === true) {
-      return this[i].sameStructureAs(other[i]);
-    } else if (
-      Array.isArray(other[i]) === true ||
-      Array.isArray(this[i]) === true
-    ) {
-      return false;
+  for (let i = 0; i < str.length; i++) {
+    if (str.charCodeAt(i) >= 97 && str.charCodeAt(i) <= 122) {
+      arr.push(str[i]);
+    } else if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 90) {
+      if (arr.length > 0) {
+        arr.push("-");
+      }
+      arr.push(str[i].toLowerCase());
     }
   }
 
-  return true;
-};
+  return arr.join("");
+}
 
-console.log([1, 1, 1].sameStructureAs([2, 2, 2]), true);
+console.log(kebabize("myCamelCasedString"), "my-camel-cased-string");
+console.log(kebabize("myCamelHas3Humps"), "my-camel-has-humps");
+console.log(kebabize("CAMEL"), "c-a-m-e-l");
 
-// Base case:
-// If there are no arrays, return arr.length = this.length
-// Recursive case:
-// For each array, call this function
+// A string containing words written in valid camelCase.
+// Return the text written as kebab-case. The string should only contain lower case letters. No numbers.
+
+// Declare a result variable equal to an empty array.
+// Iterate through the parameter.
+// If the character is lowercase, push it.
+// If the character is uppercase, push a space and the lowercase chacter.
+// Join and return.
