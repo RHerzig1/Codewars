@@ -18,12 +18,8 @@ function mix(str1, str2) {
   }
 
   const keys = Object.keys(str1Count)
-    .concat(
-      Object.keys(str2Count).map(
-        (elem, index, arr) => arr.indexOf(elem) === index
-      )
-    )
-    .sort();
+    .concat(Object.keys(str2Count))
+    .filter((elem, index, arr) => arr.indexOf(elem) === index);
 
   for (const elem of keys) {
     if (str1Count[elem] > 1 && str2Count[elem] > 1) {
@@ -41,19 +37,26 @@ function mix(str1, str2) {
     }
   }
 
-  result = result.sort((a, b) => b[1].length - a[1].length);
+  result = result.sort((a, b) => {
+    if (b[1].length !== a[1].length) {
+      return b[1].length - a[1].length;
+    } else if (a[0][0] !== b[0][0]) {
+      return a[0].charCodeAt(0) - b[0].charCodeAt(0);
+    } else {
+      return a[1].charCodeAt(0) - b[1].charCodeAt(0);
+    }
+  });
 
-  return result;
+  return result.map((elem) => elem.join(":")).join("/");
 }
 
-console.log(mix("aaaa bb c", "aaa bbb c d D"), "1:aaaa/2:bbb");
+console.log(mix("aaaa bb c", "aaa bbb c d D") === "1:aaaa/2:bbb");
 console.log(
-  mix("Are they here", "yes, they are here"),
-  "2:eeeee/2:yy/=:hh/=:rr"
+  mix("Are they here", "yes, they are here") === "2:eeeee/2:yy/=:hh/=:rr"
 );
 console.log(
-  mix("looping is fun but dangerous", "less dangerous than coding"),
-  "1:ooo/1:uuu/2:sss/=:nnn/1:ii/2:aa/2:dd/2:ee/=:gg"
+  mix("looping is fun but dangerous", "less dangerous than coding") ===
+    "1:ooo/1:uuu/2:sss/=:nnn/1:ii/2:aa/2:dd/2:ee/=:gg"
 );
 
 // Parameters are two valid strings that may contain uppercase letters, lowercase letters, spaces, and symbols.
