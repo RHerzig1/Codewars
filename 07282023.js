@@ -1,3 +1,5 @@
+// Write a function that takes a list of integers and returns a list of prime numbers and sums.
+
 function sumOfDivided(arr) {
   const cache = {};
   const max = Math.max(...arr.map((elem) => Math.abs(elem)));
@@ -33,8 +35,6 @@ function isPrime(num) {
 
   return true;
 }
-
-// Write a function that takes a list of integers and returns a list of prime numbers
 
 console.log(sumOfDivided([12, 15]), [
   [2, 12],
