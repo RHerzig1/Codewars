@@ -17,8 +17,8 @@ function recoverSecret(triplets) {
       if (arr[1]) {
         second.push(arr[1]);
       }
-      if (arr[1]) {
-        third.push(arr[1]);
+      if (arr[2]) {
+        third.push(arr[2]);
       }
     }
 
@@ -37,9 +37,6 @@ function recoverSecret(triplets) {
         count[char] = false;
       }
     }
-
-    console.log(triplets)
-    console.log(count);
 
     for (const prop in count) {
       if (count[prop]) {
