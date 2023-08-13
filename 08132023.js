@@ -1,24 +1,27 @@
-// Write a function that reverses every other word of a string.
+// Return the number of laps two runners of different tracks will have to make to run an equal distance.
 
-const reverse = (str) =>
-  str
-    .trim()
-    .split(" ")
-    .map((word, index) =>
-      index % 2 === 1 ? [...word].reverse().join("") : word
-    )
-    .join(" ");
+function numLaps(x, y) {
+  const gcd = calcGCD(x, y);
+  const lcm = (x * y) / gcd;
+  return [lcm / x, lcm / y];
+}
 
-console.log(reverse("Hello World!"), "Hello !dlroW");
-console.log(reverse("Reverse this longer string"), "Reverse siht longer gnirts");
-console.log(reverse("    Reverse this longer string with whitespace     "), "Reverse siht longer gnirts with ecapsetihw");
-console.log(reverse("   "), "");
+function calcGCD(x, y) {
+  let r = null;
+  while (x % y > 0) {
+    r = x % y;
+    x = y;
+    y = r;
+  }
+  return y;
+}
 
-// A string containing words seperate by spaces.
-// Return the string with every other word reversed.
+console.log(numLaps(2, 8), 4, 1);
+console.log(numLaps(3, 7), 7, 3);
+console.log(numLaps(4, 6), 3, 2);
 
-// Trim the string.
-// Split it into an array.
-// For every odd indexed word, reverse and return it.
-// Else, just return the word.
-// Join and return the string.
+// Two integers > 1 representing the distance of each track.
+// Calculate the minimum number of laps each runner will have to make in order to have an equal distance.
+
+// Calculate the least common mulitple.
+// Divide the lcm by the actual lap length.
