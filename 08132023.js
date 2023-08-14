@@ -1,4 +1,4 @@
-// Return the number of laps two runners of different tracks will have to make to run an equal distance.
+// Return the number of laps two runners of different tracks will have to make to run an equal distance (gcd and lcm).
 
 function numLaps(x, y) {
   const gcd = calcGCD(x, y);
