@@ -1,4 +1,4 @@
-// Write a prototype method that extracts nested object values
+// Write a prototype method that extracts nested object values.
 
 Object.prototype.hash = function (str) {
   const arr = str.split(".");
