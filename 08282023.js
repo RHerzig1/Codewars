@@ -4,23 +4,23 @@ function validISBN10(isbn) {
   if (isbn.length !== 10) {
     return false;
   }
-  
-  const arr = [...isbn]
-  
-  if (arr[9] === 'X') {
+
+  const arr = [...isbn];
+
+  if (arr[9] === "X") {
     arr[9] = 10;
   }
-  
+
   return arr.reduce((a, c, i) => a + c * (i + 1), 0) % 11 === 0;
 }
 
-console.log(validISBN10('1112223339'), true);
-console.log(validISBN10('111222333'), false);
-console.log(validISBN10('1112223339X'), false);
-console.log(validISBN10('1234554321'), true);
-console.log(validISBN10('1234512345'), false);
-console.log(validISBN10('048665088X'), true);
-console.log(validISBN10('X123456788'), false);
+console.log(validISBN10("1112223339"), true);
+console.log(validISBN10("111222333"), false);
+console.log(validISBN10("1112223339X"), false);
+console.log(validISBN10("1234554321"), true);
+console.log(validISBN10("1234512345"), false);
+console.log(validISBN10("048665088X"), true);
+console.log(validISBN10("X123456788"), false);
 
 // A string of numbers and uppercase letters.
 // Return true or false, indicating whether the parameter is valid. To be valid:
