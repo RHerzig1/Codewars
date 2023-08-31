@@ -9,12 +9,12 @@ function backwardsPrime(start, end) {
       const backwards = Number(String(i).split("").reverse("").join(""));
 
       if (i !== backwards && isPrime(backwards)) {
-        primes.push(i)
+        primes.push(i);
       }
     }
   }
 
-  return primes
+  return primes;
 }
 
 function isPrime(num) {
