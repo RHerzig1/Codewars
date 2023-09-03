@@ -1,4 +1,4 @@
-// Write a function that can navigate a maze from start to finish.
+// Write a function that takes a maze and directions and returns the result.
 
 function mazeRunner(maze, directions) {
   const location = findStart(maze);
