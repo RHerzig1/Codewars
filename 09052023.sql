@@ -21,7 +21,7 @@ WHERE
  | Andorra     | Europe    | 468     | 78115      | 3712000000   |
  | Angola      | Africa    | 1246700 | 20609294   | 100990000000 |
  +-------------+-----------+---------+------------+--------------+
- 
+
  Output: 
  +-------------+------------+---------+
  | name        | population | area    |
@@ -36,3 +36,4 @@ WHERE
  
  A country is large if it has an area of at least 3000000 or a population of at least 25000000.
  */
+ 
