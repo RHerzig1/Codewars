@@ -1,4 +1,5 @@
 -- Write a query that returns a list of managers with at least 5 direct reports.
+
 SELECT
   e1.name
 FROM
@@ -27,7 +28,7 @@ WHERE
  | 105 | Anne  | A          | 101       |
  | 106 | Ron   | B          | 101       |
  +-----+-------+------------+-----------+
- 
+
  Output: 
  +------+
  | name |
