@@ -1,42 +1,53 @@
--- Write a query that returns a list of movies with an odd-numbered ID that is not boring.
+-- Write a query that returns a list of products and their average selling price.
 
 SELECT
-  *
+  prices.product_id,
+  IFNULL(ROUND((SUM(unitssold.units * prices.price) / SUM(unitssold.units)), 2), 0) AS average_price
 FROM
-  cinema
-WHERE
-  MOD(id, 2) = 1
-  AND description != 'boring'
-ORDER BY
-  rating DESC;
+  prices
+  LEFT JOIN unitssold ON prices.product_id = unitssold.product_id
+  AND unitssold.purchase_date BETWEEN prices.start_date
+  AND prices.end_date
+GROUP BY
+  prices.product_id;
 
 /*
- Input: 
+ Input:
  
- Cinema table:
- +----+------------+-------------+--------+
- | id | movie      | description | rating |
- +----+------------+-------------+--------+
- | 1  | War        | great 3D    | 8.9    |
- | 2  | Science    | fiction     | 8.5    |
- | 3  | irish      | boring      | 6.2    |
- | 4  | Ice song   | Fantacy     | 8.6    |
- | 5  | House card | Interesting | 9.1    |
- +----+------------+-------------+--------+
+ Prices table:
+ +------------+------------+------------+--------+
+ | product_id | start_date | end_date   | price  |
+ +------------+------------+------------+--------+
+ | 1          | 2019-02-17 | 2019-02-28 | 5      |
+ | 1          | 2019-03-01 | 2019-03-22 | 20     |
+ | 2          | 2019-02-01 | 2019-02-20 | 15     |
+ | 2          | 2019-02-21 | 2019-03-31 | 30     |
+ +------------+------------+------------+--------+
+ 
+ UnitsSold table:
+ +------------+---------------+-------+
+ | product_id | purchase_date | units |
+ +------------+---------------+-------+
+ | 1          | 2019-02-25    | 100   |
+ | 1          | 2019-03-01    | 15    |
+ | 2          | 2019-02-10    | 200   |
+ | 2          | 2019-03-22    | 30    |
+ +------------+---------------+-------+
  
  Output: 
- +----+------------+-------------+--------+
- | id | movie      | description | rating |
- +----+------------+-------------+--------+
- | 5  | House card | Interesting | 9.1    |
- | 1  | War        | great 3D    | 8.9    |
- +----+------------+-------------+--------+
+ +------------+---------------+
+ | product_id | average_price |
+ +------------+---------------+
+ | 1          | 6.96          |
+ | 2          | 16.96         |
+ +------------+---------------+
  
  Explanation: 
- We have three movies with odd-numbered IDs: 1, 3, and 5. The movie with ID = 3 is boring so we do not include it in the answer.
+ Average selling price = Total Price of Product / Number of products sold.
+ Average selling price for product 1 = ((100 * 5) + (15 * 20)) / 115 = 6.96
+ Average selling price for product 2 = ((200 * 15) + (30 * 30)) / 230 = 16.96
  */
 /*
- A table containging a list of movies. Each has a unique ID and description.
- Return the movies with an odd-numbered ID and a description that does not say "boring". Then sort the table by rating in descending order.
- 
+ A Prices table and UnitsSold table. Both may contain duplicate products seperated by unique dates.
+ Return distinct product_id and average_price in any order. Round to 2 decimal places.
  */
