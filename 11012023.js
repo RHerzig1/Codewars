@@ -13,4 +13,5 @@ console.log(sortLastChar('take me to semynak'), ['take', 'me', 'semynak', 'to'])
 
 // Split the string into an array.
 // Sort the array by last letter.
+
 // Return the result.
