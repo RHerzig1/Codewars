@@ -35,3 +35,11 @@ console.log(toDayOfYear([25, 12, 2017]), 359);
 console.log(toDayOfYear([1, 5, 3000]), 121);
 console.log(toDayOfYear([31, 10, 1991]), 304);
 console.log(toDayOfYear([5, 11, 1604]), 310);
+
+// An array containing day, month, and year as integers. Always valid, positive numbers. Format [D, M, YYYY].
+// Return the number of days between Jan 1st of that year, and the date provided. Include the current day.
+
+// Spread day, month, and year into seperate variables.
+// Create a months object containing the number of days in each month.
+// Include a setter to account for leap years, if needed.
+// Add up the months between Jan and the current month.
