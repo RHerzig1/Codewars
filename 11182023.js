@@ -1,14 +1,16 @@
-// Write a function that sorts an array of rock climbing ranks.
+// Write a function that sorts an array by referenceing another provided array.
 
-function sortGrades(arr) {
-  const ref = ["V0", "V0+", "V1", "V2", "V3", "V4", "V5", "V6", "V7", "V8", "V9", "V10", "V11", "V12", "V13", "V14", "V15", "V16", "V17"];
+function sortWithRef(arr, ref) {
   return arr.sort((a, b) => ref.indexOf(a) - ref.indexOf(b));
 }
 
-console.log(sortGrades(["V13", "V14", "VB", "V0"]), ["VB", "V0", "V13", "V14"]);
+console.log(sortWithRef([1, 2, 3, 4, 5, 6], [6, 5, 4, 3, 2, 1]), [6, 5, 4, 3, 2, 1]);
+console.log(sortWithRef([1, 1, 1, 5, 3], [6, 5, 4, 3, 2, 1]), [5, 3, 1, 1, 1]);
+console.log(sortWithRef([5, 4, 6, 1], [6, 5, 4, 3, 2, 1]), [6, 5, 4, 1]);
 
-// An array of rock climbing ranks. Length => 1. Always valid inputs.
-// Sort the rank into this order.
+// An array of numbers. Length => 1. Always valid inputs.
+// A seconds array used as a reference. Contains numbers. Always valid inputs.
+// Sort the rank into the order.
 
 // Declare the order.
 // Reference that in the sort parameter.
