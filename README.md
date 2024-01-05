@@ -6,6 +6,7 @@
     <!-- <img src="https://img.shields.io/static/v1?label=|&message=SASS&color=a33550&style=plastic&logo=sass"/> -->
     <!-- <img src="https://img.shields.io/static/v1?label=|&message=BOOTSTRAP&color=a33550&style=plastic&logo=bootstrap"/> -->
     <img src="https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=35a34d&style=plastic&logo=javascript"/>
+    <img src="https://img.shields.io/static/v1?label=|&message=TYPESCRIPT&color=35a34d&style=plastic&logo=typescript"/>
     <!-- <img src="https://img.shields.io/static/v1?label=|&message=REACT.JS&color=35a34d&style=plastic&logo=react"/> -->
     <!-- <img src="https://img.shields.io/static/v1?label=|&message=REACT.NATIVE&color=35a34d&style=plastic&logo=react"/> -->
     <!-- <img src="https://img.shields.io/static/v1?label=|&message=TYPESCRIPT&color=35a34d&style=plastic&logo=typescript"/> -->
