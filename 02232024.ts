@@ -32,3 +32,5 @@ console.log(carFleet(100, [0, 2, 4], [4, 2, 1]), 1);
 // If the time is greater than the previous vehicle, push it it the stack.
 // Else, do nothing. This vehicle will catch up and become a "fleet".
 // Return the length of the stack.
+
+// https://www.youtube.com/watch?v=Pr6T-3yB9RM
