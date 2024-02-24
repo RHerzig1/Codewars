@@ -26,8 +26,5 @@ console.log(largestRectangleArea([2, 4]), 4)
 // Declare a stack array for [index, height] pairs.
 // Declare an areas array.
 
-// Return the max value from areas.
-
 // https://leetcode.com/problems/largest-rectangle-in-histogram/
-// youtube
-//
+// https://www.youtube.com/watch?v=zx5Sw9130L0
