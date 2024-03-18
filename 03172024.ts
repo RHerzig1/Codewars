@@ -13,19 +13,19 @@
  */
 
 function copyRandomList(head: Node | null): Node | null {
-  // Iterate linked list, create copy of each node and store in hash map.
   let hash = new Map<Node, Node>();
   let curr = head;
-
+  
+  // Iterate linked list, create copy of each node and store in hash map.
   while (curr) {
     const newNode = new Node(curr.val);
     hash.set(curr, newNode);
     curr = curr.next;
   }
 
-  // Iterate linked list, connect Node.val and Node.random of new Nodes.
   curr = head;
-
+  
+  // Iterate linked list, connect Node.val and Node.random properties of new Nodes.
   while (curr) {
     const newNode = hash.get(curr);
     const newRandom = hash.get(curr.random);
