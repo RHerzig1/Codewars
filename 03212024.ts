@@ -1,4 +1,4 @@
-// Write a function that calculates the best time to buy and sell stock.
+// Write a function that calculates the best time to buy and sell stock using the sliding window method.
 
 function maxProfit(prices: number[]): number {
   let [left, right, max] = [0, 0, 0];
