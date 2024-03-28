@@ -1,38 +1,44 @@
-// Write a function that returns the maximum length of a substring containing no more than 2 occurances of each character.
+// Write a function that returns the k-beauty of a number using the sliding window technique.
 
-function maximumLengthSubstring(s: string): number {
-  let charMap = new Map<string, number>();
-  let maxLength = 0;
-  let left = 0;
+function divisorSubstrings(num: number, k: number): number {
+  let str = String(num);
+  let subStr = "";
   let right = 0;
+  let left = 0;
+  let count = 0;
 
-  while (right < s.length) {
-    // Add the right pointer character to the map.
-    charMap.set(s[right], (charMap.get(s[right]) || 0) + 1);
+  while (right < str.length) {
+    // Cache the right pointer value.
+    subStr = subStr + str[right];
 
-    // If the right pointer character becomes greater than 2, increment the left pointer until it becomes 2 again.
-    while (charMap.get(s[right])! > 2) {
-      charMap.set(s[left], (charMap.get(s[left]) || 1) - 1);
+    // If the width is correct, continue with the count and left pointer.
+    if (right - left + 1 === k) {
+      // Check the condition. If valid, increment count.
+      const subNum = Number(subStr);
+      const isDivisor = num % subNum === 0;
+
+      if (isDivisor) {
+        count++;
+      }
+
+      // Increment the left pointer.
+      subStr = subStr.slice(1);
       left++;
     }
-
-    // Calculate the length and increase maxLength, if possible.
-    maxLength = Math.max(maxLength, right - left + 1);
 
     // Increment the right pointer.
     right++;
   }
 
-  return maxLength;
+  return count;
 }
 
-console.log(maximumLengthSubstring("bcbbbcba"), 4); // bcba
-console.log(maximumLengthSubstring("aaaa"), 2); // aa
-console.log(maximumLengthSubstring("eebadadbfa"), 9); // eebadadbf
-console.log(maximumLengthSubstring("bcbbbcba"), 4); // bcba
-// https://leetcode.com/problems/maximum-length-substring-with-two-occurrences/description/
+console.log(divisorSubstrings(240, 2), 2); // 24, 40 = 2
+console.log(divisorSubstrings(430043, 2), 2); // 43, 43 = 2
 
-// s: string. Lowercase English characters. 2 <= s.length <= 100.
-// Return the maximum length of a substring that contains no more than two occurances of each character.
+// num: number. 1 <= num <= 10^9.
+// k: number. 1 <= k <= num.length.
+// Return the k-beauty of a number. This is the number of substrings of num, with a length of k, that is a divisor of num.
+// 0 is not considered a divisor.
 
-// Use the sliding window technique.
+// Use a sliding window technique.
