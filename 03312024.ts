@@ -2,7 +2,6 @@
 
 function findLHS(nums: number[]): number {
   const numMap = new Map<number, number>();
-  nums = nums.sort((a, b) => b - a);
   let maxLength = 0;
 
   for (const num of nums) {
