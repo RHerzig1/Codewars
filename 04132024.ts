@@ -1,3 +1,5 @@
+// Write a function the returns the number of subarrays that reduce to k in linear time.
+
 function subarraySum(nums: number[], k: number): number {
   // Store the sum of each iteration and it's appearance count in a Map.
   const numMap = new Map<number, number>();
