@@ -1,4 +1,4 @@
-// Write a function that
+// Write a function that returns the next greater element of a circular array.
 
 function nextGreaterElements(nums: number[]): number[] {
   const stack: number[] = [];
@@ -24,4 +24,9 @@ function nextGreaterElements(nums: number[]): number[] {
   return result;
 }
 
+console.log(nextGreaterElements([1,2,1]), [2,-1,2]);
+console.log(nextGreaterElements([1,2,3,4,3]), [2,3,4,-1,4]);
 // https://leetcode.com/problems/next-greater-element-ii/description/
+
+// nums: number[]. Array of integers. 0 <= nums.length <= 10^4. -10^9 <= nums[i] <= 10^9.
+// Return an array of each integer's next greater element. At the end of the array, circle back to the beginning. If there is no greater element, use -1.
