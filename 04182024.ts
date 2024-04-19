@@ -10,15 +10,11 @@ function numberOfSubstrings(s: string): number {
     // Cache the right pointer value.
     charMap.set(s[right], (charMap.get(s[right]) || 0) + 1);
 
-    // If needed, increment the left pointer.
-    if (right === s.length - 1) {
+    // Verify the condition, then increment the left pointer.
+    while (charMap.get("a") && charMap.get("b") && charMap.get("c")) {
+      count += s.length - right;
       charMap.set(s[left], (charMap.get(s[left]) || 1) - 1);
       left++;
-    }
-
-    // Verify the condition.
-    if (charMap.get("a")! > 0 && charMap.get("b")! > 0 && charMap.get("c")! > 0) {
-      count++;
     }
 
     // Increment the right pointer.
