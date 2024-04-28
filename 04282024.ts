@@ -21,10 +21,20 @@ function pairSum(head: ListNode | null): number {
 
   while (fast) {
     fast = fast.next.next || null;
-    
-
+    slow.next = prev;
+    prev = slow;
+    slow = next;
+    next = next.next;
   }
 
+  let left = prev;
+  let right = slow;
+
+  while (left && right) {
+    maxSum = Math.max(maxSum, left.val + right.val);
+    left = left.next;
+    right = right.next;
+  }
 
   return maxSum;
 }
