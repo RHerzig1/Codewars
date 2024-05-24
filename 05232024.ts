@@ -1,4 +1,4 @@
-// Write a function that returns whether two binary trees are identical.
+// Write a function that returns whether a binary tree is a subtree of another.
 
 /**
  * Definition for a binary tree node.
@@ -14,27 +14,38 @@
  * }
  */
 
-function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
-  if (!p && !q) {
+function isSubtree(root: TreeNode | null, subRoot: TreeNode | null): boolean {
+  if (!root) {
+    return !subRoot;
+  }
+
+  if (isSameNode(root, subRoot)) {
     return true;
-  } else if (!p || !q) {
+  }
+
+  return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+}
+
+function isSameNode(root: TreeNode | null, subRoot: TreeNode | null): boolean {
+  if (!root && !subRoot) {
+    return true;
+  } else if (!root || !subRoot) {
     return false;
   }
 
-  const compareNode = p.val === q.val;
-  const compareLeftChild = isSameTree(p.left, q.left);
-  const compareRightChild = isSameTree(p.right, q.right);
+  if (root.val !== subRoot.val) {
+    return false;
+  }
 
-  return compareNode && compareLeftChild && compareRightChild;
+  return isSameNode(root.left, subRoot.left) && isSameNode(root.right, subRoot.right);
 }
 
-console.log(isSameTree([1, 2, 3], [1, 2, 3]), true);
-console.log(isSameTree([1, 2], [1, null, 2]), false);
-console.log(isSameTree([1, 2, 1], [1, 1, 2]), true);
-// https://leetcode.com/problems/same-tree/
+console.log(isSubtree([3, 4, 5, 1, 2], [412]), true);
+console.log(isSubtree([3, 3, 4, 5, 1, , 2, null, null, null, null, 0], [4, 1, 2]), false);
+// https://leetcode.com/problems/subtree-of-another-tree/
 
-// p: TreeNode | null. 0 <= number of nodes <= 100. -10^4 <= Node.val <= 10^4.
-// q: TreeNode | null. 0 <= number of nodes <= 100. -10^4 <= Node.val <= 10^4.
-// Return a Boolean indicating whether the two trees are identical. They are identical if they have the same structure and values.
+// root: TreeNode | null. 1 <= number of nodes <= 2000. -10^-4 <= Node.val <= 10^4.
+// subRoot: TreeNode | null. 1 <= number of nodes <= 1000. -10^-4 <= Node.val <= 10^4.
+// Return a Boolean indicating whether or not subRoot is a subtree of root. It must have the same structure and node values to be true, including children (or lack of).
 
-// Use a depth-first algorithm.
+// Use a depth-first search algorithm.
