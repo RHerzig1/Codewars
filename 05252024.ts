@@ -20,13 +20,15 @@ function levelOrder(root: TreeNode | null): number[][] {
 
   while (queue[0]) {
     const currDepth = queue.length;
-
-    // Iterate the queue and push each node value into result. Performed once per level.
-    result.push(queue.map((node) => node.val));
+    let currValues: number[] = [];
 
     // Iterate the current set of nodes in the queue (from queue[0] to queue[currDepth]).
     for (let i = 0; i < currDepth; i++) {
+      // Remove queue[0] and assign it to node.
       const node = queue.shift();
+
+      // Push the node value into currValues.
+      currValues.push(node.val);
 
       // Push the left child into a queue.
       if (node.left) {
@@ -38,6 +40,9 @@ function levelOrder(root: TreeNode | null): number[][] {
         queue.push(node.right);
       }
     }
+
+    // currValues contains all values from the current level. Push it into result.
+    result.push(currValues);
   }
 
   return result;
