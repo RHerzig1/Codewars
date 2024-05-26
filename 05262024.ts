@@ -1,4 +1,4 @@
-// Write a function that returns the values from the right side of a binary tree.
+// Write a function that returns the values from the right-side view of a binary tree.
 
 /**
  * Definition for a binary tree node.
