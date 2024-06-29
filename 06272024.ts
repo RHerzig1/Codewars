@@ -5,7 +5,7 @@ function findLHS(nums: number[]): number {
 
   // Cache the count of each value of the array.
   for (const num of nums) {
-      cache.set(num, (cache.get(num) || 0) + 1);
+    cache.set(num, (cache.get(num) || 0) + 1);
   }
 
   // Cache the max sum where the difference between numbers === 1.
@@ -14,17 +14,17 @@ function findLHS(nums: number[]): number {
   let prevCount: number | null = null;
 
   for (const [prop, count] of cache) {
-      if (Number.isInteger(prevProp) && (prop === prevProp + 1 || prop === prevProp - 1)) {
-          const sum = prevCount + count;
-          maxLength = Math.max(maxLength || 0, sum);
-      }
+    if (Number.isInteger(prevProp) && (prop === prevProp! + 1 || prop === prevProp! - 1)) {
+      const sum = prevCount! + count;
+      maxLength = Math.max(maxLength || 0, sum);
+    }
 
-      prevProp = prop;
-      prevCount = count;
+    prevProp = prop;
+    prevCount = count;
   }
 
   return maxLength;
-};
+}
 
 console.log(findLHS([1, 3, 2, 2, 5, 2, 3, 7]), 5); // [3, 2, 2, 2, 3]
 console.log(findLHS([1, 2, 3, 4]), 2);
