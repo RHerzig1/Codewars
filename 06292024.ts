@@ -1,3 +1,5 @@
+// Count the minimum number of changes to make k length blocks consecutive "B".
+
 function minimumRecolors(blocks: string, k: number): number {
   let minCount = blocks.length;
   let currCount = 0;
