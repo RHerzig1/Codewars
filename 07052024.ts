@@ -4,14 +4,8 @@ function isValid(s: string): boolean {
   const stack: string[] = [];
 
   for (const char of s) {
-    if (char === "(") {
-      stack.push("(");
-      continue;
-    } else if (char === "[") {
-      stack.push("[");
-      continue;
-    } else if (char === "{") {
-      stack.push("{");
+    if (char === "(" || char === "[" || char === "{") {
+      stack.push(char);
       continue;
     }
 
@@ -28,7 +22,7 @@ function isValid(s: string): boolean {
     return false;
   }
 
-  return true;
+  return stack.length === 0;
 }
 
 console.log(isValid("()"), true);
