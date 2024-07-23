@@ -1,4 +1,4 @@
-// Return the kth missing number from an array of sorted values.
+// Return the kth missing number from an array of sorted values using binary search using binary search.
 
 function findKthPositive(arr: number[], k: number): number {
   let left = 0;
