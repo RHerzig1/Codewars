@@ -2,7 +2,7 @@
 
 function processQueries(queries: number[], m: number): number[] {
   const permutations = [...Array(m).keys()].map((elem) => elem + 1);
-  const result = [];
+  const result: number[] = [];
 
   for (const num of queries) {
     const index = permutations.indexOf(num);
