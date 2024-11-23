@@ -1,4 +1,4 @@
-// 
+// Count of substrings with all three characters at least once.
 
 function numberOfSubstrings(str: string): number {
   const cache = {
