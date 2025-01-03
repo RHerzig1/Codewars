@@ -1,26 +1,28 @@
 -- Query monthly transactions per month per country.
 
+WITH cte AS (
+    SELECT
+        delivery_id,
+        customer_id,
+        order_date,
+        customer_pref_delivery_date,
+        CASE order_date
+            WHEN customer_pref_delivery_date THEN 1
+            ELSE 0
+        END AS order_type,
+        CASE order_date
+            WHEN MIN(order_date) OVER(PARTITION BY customer_id) THEN 'Y'
+            ELSE 'N'
+        END AS first_order
+    FROM
+        delivery
+)
+
 SELECT
-    TO_CHAR(trans_date, 'YYYY-MM') AS month,
-    country,
-    COUNT(1) AS trans_count,
-    SUM(
-        CASE WHEN state = 'approved'
-            THEN 1
-            ELSE 0
-        END
-    ) AS approved_count,
-    SUM(amount) AS trans_total_amount,
-    SUM(
-        CASE WHEN state = 'approved'
-            THEN amount
-            ELSE 0
-        END
-    ) AS approved_total_amount
+    ROUND(AVG(order_type) * 100, 2) AS immediate_percentage
 FROM
-    transactions
-GROUP BY
-    TO_CHAR(trans_date, 'YYYY-MM'),
-    country;
+    cte
+WHERE
+    first_order = 'Y';
 
 -- https://leetcode.com/problems/monthly-transactions-i
