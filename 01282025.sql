@@ -1,31 +1,22 @@
--- Generate a list of each name seperated into columns by occupation.
+-- Query a BST table and return Root, Leaf, or Inner for each node.
 
 SELECT
-    MAX(Doctor) AS Doctor,
-    MAX(Professor) AS Professor,
-    MAX(Singer) AS Singer,
-    MAX(Actor) AS Actor
-FROM (
-    SELECT
-        CASE
-            WHEN Occupation = 'Doctor' THEN Name
-        END AS Doctor,
-        CASE
-            WHEN Occupation = 'Professor' THEN Name
-        END AS Professor,
-        CASE
-            WHEN Occupation = 'Singer' THEN Name
-        END AS Singer,
-        CASE
-            WHEN Occupation = 'Actor' THEN Name
-        END AS Actor,
-        ROW_NUMBER() OVER (PARTITION BY Occupation ORDER BY Name) AS RowNumber
-    FROM
-        OCCUPATIONS
-) PIVOT_TABLE
-GROUP BY
-    RowNumber
+    n,
+    CASE
+        WHEN p IS NULL THEN 'Root'
+        WHEN NOT EXISTS (
+            SELECT
+                1
+            FROM
+                bst b2
+            WHERE
+             b1.n = b2.p
+        ) THEN 'Leaf'
+        ELSE 'Inner'
+    END AS type
+FROM
+    bst b1
 ORDER BY
-    RowNumber;
+    n;
 
--- https://www.hackerrank.com/challenges/occupations
+-- https://www.hackerrank.com/challenges/binary-search-tree-1
